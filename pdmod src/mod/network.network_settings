@@ -1978,6 +1978,11 @@
 		<message name="sync_mutator_hydra_split" delivery="reliable" receiver="connection" check="server_to_client">
 			<param type="vector3" /> <!-- split position -->
 		</message>
+		
+		<message name="sync_unit_surrendered" receiver="unit" delivery="ordered">
+			<param type="unit"/>
+			<param type="bool" /> <!-- Surrender on/off -->
+		</message>
 
 		<message name="sync_synced_unit_outfit" delivery="reliable" receiver="connection" check="server_to_client">
 			<param type="int" />    <!-- unit id -->
