@@ -2174,7 +2174,7 @@
 
 		<message name="biglobby__sync_equipment_setup" delivery="ordered" receiver="biglobby__unit" check="server_to_client">
 			<param type="unit" />
-			<param type="float" min="0" max="2" />
+			<param type="float" min="0" max="255" />
 			<param type="int" min="0" max="128" /> <!-- Peer id -->
 		</message>
 
