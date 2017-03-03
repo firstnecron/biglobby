@@ -2015,6 +2015,33 @@
 			<param type="string" /> <!-- Underbarrel weapon id -->
 			<param type="bool" />   <!-- Underbarrel active state -->
 		</message>
+		
+		<!-- /// Manage Spawned Units extension begin /// -->
+        <message name="sync_unit_spawn" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="unit" /> <!-- spawn_unit -->
+            <param type="string" /><!-- align -->
+            <param type="string" /><!-- unit ID -->
+            <param type="string" /><!-- parent extension name -->
+        </message>
+		
+        <message name="run_spawn_unit_sequence" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="string" /><!-- parent extension name -->
+            <param type="string" /><!-- unit ID -->
+            <param type="string" /><!-- sequence name -->
+        </message>
+		
+        <message name="run_local_push_child_unit" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="string" /><!-- parent extension name -->
+            <param type="string" /><!-- unit ID -->
+            <param type="int" /><!-- mass -->
+            <param type="int" /><!-- pow -->
+            <param type="string" /><!-- obj1 -->
+            <param type="string" /><!-- obj2 -->
+        </message>
+		<!-- /// Manage Spawned Units extension end /// -->
 	</rpc>
 
 
