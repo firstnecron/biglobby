@@ -254,7 +254,11 @@
 
 		<message name="sync_profile" delivery="ordered" receiver="connection">
 			<param type="int" min="0" max="100" /> <!-- Level -->
+
+
+
 			<param type="int" min="0" max="25" /> <!-- Rank -->
+
 		</message>
 
 		<message name="report_dead_connection" delivery="ordered" receiver="connection" check="client_to_server">
@@ -594,6 +598,13 @@
 				<param type="vector3" />
 			</message>
 
+
+
+
+
+
+
+
 			<message name="action_walk_stop" delivery="ordered" receiver="unit" check="server_to_client">
 				<param type="unit" />
 			</message>
@@ -611,6 +622,13 @@
 				<param type="int" min="1" max="3" /> <!-- pose code -->
 				<param type="vector3" /> <!-- pose change position -->
 			</message>
+
+
+
+
+
+
+
 
 			<message name="action_jump" delivery="ordered" receiver="unit">
 				<param type="unit" />
@@ -2064,6 +2082,31 @@
 			<param type="unit" /> <!-- carry unit -->
 		</message>
 		
+
+		<!-- /// Manage Spawned Units extension begin /// -->
+        <message name="sync_unit_spawn" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="unit" /> <!-- spawn_unit -->
+            <param type="string" /><!-- align -->
+            <param type="string" /><!-- unit ID -->
+            <param type="string" /><!-- parent extension name -->
+        </message>
+        <message name="run_spawn_unit_sequence" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="string" /><!-- parent extension name -->
+            <param type="string" /><!-- unit ID -->
+            <param type="string" /><!-- sequence name -->
+        </message>
+        <message name="run_local_push_child_unit" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="string" /><!-- parent extension name -->
+            <param type="string" /><!-- unit ID -->
+            <param type="int" /><!-- mass -->
+            <param type="int" /><!-- pow -->
+            <param type="string" /><!-- obj1 -->
+            <param type="string" /><!-- obj2 -->
+        </message>
+		<!-- /// Manage Spawned Units extension end /// -->
 
 	</rpc>
 
