@@ -128,6 +128,11 @@
 			<param type="int" min="1" max="4" /> <!-- Peer id -->
 		</message>
 
+
+
+
+
+
 		<message name="set_dropin" delivery="ordered" receiver="connection" check="server_to_client"/>
 
 		<message name="spawn_dropin_penalty" delivery="ordered" receiver="connection" check="server_to_client">
@@ -213,6 +218,9 @@
 		</message>
 
 		
+
+
+
 
 
 
@@ -478,7 +486,7 @@
 
 		<message name="action_act_start" delivery="ordered" receiver="unit" check="server_to_client">
 			<param type="unit" />
-			<param type="int" min="1" max="1024"/>	<!-- fix this number. I set it to something high.george -->
+			<param type="int" min="1" max="2048"/>	<!-- fix this number. I set it to something high.george -->
 			<param type="bool"/>	<!-- blocks hurt -->
 			<param type="bool"/>	<!-- clamp_to_graph -->
 			<param type="bool"/>	<!-- needs_full_blend -->
@@ -486,7 +494,7 @@
 
 		<message name="action_act_start_align" delivery="ordered" receiver="unit" check="server_to_client">
 			<param type="unit" />
-			<param type="int" min="1" max="1024"/>	<!-- fix this number. I set it to something high.george -->
+			<param type="int" min="1" max="2048"/>	<!-- fix this number. I set it to something high.george -->
 			<param type="bool"/>	<!-- blocks hurt -->
 			<param type="bool"/>	<!-- clamp_to_graph -->
 			<param type="bool"/>	<!-- needs_full_blend -->
@@ -2107,6 +2115,32 @@
             <param type="string" /><!-- obj2 -->
         </message>
 		<!-- /// Manage Spawned Units extension end /// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	</rpc>
 
