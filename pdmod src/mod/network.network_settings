@@ -1048,8 +1048,9 @@
 			<param type="int" min="0" max="16" /> <!-- sentrygun_ammo ratio -->
 		</message>
 
-		<message name="sentrygun_sync_state" delivery="ordered" receiver="unit" >
+		<message name="sentrygun_sync_armor_piercing" delivery="ordered" receiver="unit" >
 			<param type="unit" />
+			<param type="bool" />
 		</message>
 
 		<message name="sync_fire_mode_interaction" delivery="ordered" receiver="unit" check="server_to_client">
