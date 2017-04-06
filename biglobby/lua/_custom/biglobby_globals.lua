@@ -85,6 +85,7 @@ if not _G.BigLobbyGlobals then
 		'set_peer_synched',
 		'dropin_progress',
 		'report_dead_connection',
+		'sync_crime_spree_level',
 		'preplanning_reserved',
 		'draw_preplanning_event',
 		'sync_explode_bullet',
