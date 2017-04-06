@@ -7,7 +7,7 @@
 	"priority" : 400,
 	"updates": [
 		{
-			"revision": 2.38.1,
+			"revision": 2.39,
 			"identifier": "bkin-biglobby"
 		}
 	],
