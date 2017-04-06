@@ -2100,6 +2100,12 @@
             <param type="string" /><!-- unit ID -->
             <param type="string" /><!-- parent extension name -->
         </message>
+        <message name="sync_link_spawned_unit" delivery="ordered" receiver="unit" check="server_to_client">
+            <param type="unit" /> <!-- parent_unit -->
+            <param type="string" /><!-- unit ID -->
+            <param type="string" /><!-- joint table -->
+            <param type="string" /><!-- parent extension name -->
+        </message>
         <message name="run_spawn_unit_sequence" delivery="ordered" receiver="unit" check="server_to_client">
             <param type="unit" /> <!-- parent_unit -->
             <param type="string" /><!-- parent extension name -->
@@ -2118,31 +2124,31 @@
 		<!-- /// Manage Spawned Units extension end /// -->
 
 
+		<!-- Crime Spree Networking -->
+		<!-- We use ordered for a lot of things as we want to make sure they arrive after connection info, if the connection info has to be resent -->
+		<message name="sync_crime_spree_level" receiver="connection" delivery="ordered">
+			<param type="int" min="0" max="4" /> <!-- Peer ID -->
+			<param type="int" /> <!-- Crime Spree Level -->
+			<param type="bool" /> <!-- Has failed, host only -->
+		</message>
 
+		<message name="sync_crime_spree_mission" receiver="connection" delivery="ordered" check="server_to_client">
+			<param type="int" /> <!-- Mission Slot -->
+			<param type="string" /> <!-- Mission ID -->
+			<param type="bool" /> <!-- Selected -->
+			<param type="bool" /> <!-- Perform Randomize -->
+		</message>
 
+		<message name="sync_crime_spree_modifier" receiver="connection" delivery="ordered" check="server_to_client">
+			<param type="string" /> <!-- Modifier ID -->
+			<param type="int" /> <!-- Modifier level -->
+			<param type="bool" /> <!-- Announce -->
+		</message>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<message name="sync_crime_spree_gage_asset_event" receiver="connection" delivery="ordered" >
+			<param type="int" min="0" max="127" /> <!-- Event ID -->
+			<param type="string" /> <!-- Asset ID -->
+		</message>
 
 
 	</rpc>
