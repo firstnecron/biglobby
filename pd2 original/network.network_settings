@@ -2145,6 +2145,9 @@
 			<param type="bool" /> <!-- Announce -->
 		</message>
 
+		<message name="sync_crime_spree_modifiers_finalize" receiver="connection" delivery="ordered" check="server_to_client">
+		</message>
+
 		<message name="sync_crime_spree_gage_asset_event" receiver="connection" delivery="ordered" >
 			<param type="int" min="0" max="127" /> <!-- Event ID -->
 			<param type="string" /> <!-- Asset ID -->
